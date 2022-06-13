@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MaxMinC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int m, n, i, j, max, min;
+            Console.WriteLine("Máximo y Mínimo de una matriz");
+            Console.Write("Número de filas de la matriz A: ");
+            m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Número de columnas de la matriz A: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            int[,] A = new int[m, n];
+            Console.WriteLine("Lectura de matriz A");
+            for (i = 0; i < m; i++)
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("Elemento A[{0},{1}]: ", i, j);
+                    A[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            //Búsqueda del Máximo y Mínimo
+            max = A[0, 0];
+            min = A[0, 0];
+            for (i = 0; i < m; i++)
+                for (j = 0; j < n; j++)
+                {
+                    if (max < A[i, j])
+                        max = A[i, j];
+                    if (min > A[i, j])
+                        min = A[i, j];
+                }
+            //Impresión de resultados
+            Console.Clear();
+            Console.WriteLine("Matriz A");
+            for (i = 0; i < m; i++)
+            {
+                for (j = 0; j < n; j++)
+                    Console.Write("{0,10}", A[i, j]);
+                Console.WriteLine();
+            }
+            Console.WriteLine("El valor máximo es {0}",max);
+            Console.WriteLine("El valor mínimo es {0}", min);
+            Console.ReadLine();
+        }
+    }
+}

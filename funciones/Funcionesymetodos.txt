@@ -1,0 +1,24 @@
+﻿using System;
+namespace Funcionesymetodos
+{ class Program
+    {   static void Muestra(double x, double y, double z)
+        {   double p;
+            p = Promedio(x, y, z); //Llamada a la función Promedio
+            Console.WriteLine("El promedio de {0}, {1} y {2} es {3}",x,y,z,p);
+            Console.ReadKey();   }
+
+        static double Promedio(double x, double y, double z)
+        {  return (x + y + z) / 3; }
+
+        static void Main(string[] args)
+        {   double cal1, cal2, cal3;
+            Console.Write("Dame calificación 1: ");
+            cal1=Convert.ToDouble(Console.ReadLine());
+            Console.Write("Dame calificación 2: ");
+            cal2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Dame calificación 3: ");
+            cal3 = Convert.ToDouble(Console.ReadLine());
+            Muestra(cal1,cal2,cal3); //Llamada al procedimiento Muestra    
+        }
+    }
+}

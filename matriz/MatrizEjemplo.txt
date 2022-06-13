@@ -1,0 +1,26 @@
+﻿using System;
+namespace MatrizEjemplo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+          int m, n, i, j;
+          Console.Write("Número de filas de la matriz A: ");
+          m=Convert.ToInt32(Console.ReadLine());
+          Console.Write("Número de columnas de la matriz A: ");
+          n = Convert.ToInt32(Console.ReadLine());
+          int[,] A = new int[m, n];
+          for (i = 0; i < m; i++)
+             for(j=0;j<n;j++)
+             { Console.Write("Elemento A[{0},{1}]: ",i,j);
+             A[i, j] = Convert.ToInt32(Console.ReadLine()); }
+         Console.WriteLine("Impresión de la matriz.");
+          for (i = 0; i < m; i++)
+              {for (j = 0; j < n; j++)
+                 Console.Write("{0,8}", A[i, j]);
+              Console.WriteLine(); }
+          Console.ReadLine();
+        }
+    }
+}

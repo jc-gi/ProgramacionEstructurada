@@ -1,0 +1,27 @@
+﻿using System;
+
+namespace FuncionFactorial
+{
+    class Program
+    {
+        static int Factorial(int X)
+        {
+            int i, F=1;
+            for (i = 1; i <= X; i++)
+                F = F * i;
+            return F;
+        }
+        static void Main(string[] args)
+        {
+            int N, Resultado;
+
+            Console.WriteLine("Cálculo de factorial de N");
+            Console.WriteLine("con función normal \n");
+            Console.Write("Introduce el valor de N: ");
+            N = Convert.ToInt32(Console.ReadLine());
+            Resultado = Factorial(N);
+            Console.WriteLine("El factorial de {0} es {1}", N, Resultado);
+            Console.ReadLine();
+        }
+    }
+}

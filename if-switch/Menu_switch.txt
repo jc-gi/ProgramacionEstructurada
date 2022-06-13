@@ -1,0 +1,37 @@
+using System;
+
+namespace Menu_switch
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double b, h, a, c, area, peri;
+            char opc;
+            Console.WriteLine("1 Area del triángulo");
+            Console.WriteLine("2 Perímetro del triángulo");
+            Console.WriteLine("Introduce tu opción: ");
+            opc = Convert.ToChar(Console.ReadLine());
+            switch (opc)
+            {case '1': Console.WriteLine("Ingresa base: ");
+                    b = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Ingresa altura: ");
+                    h = Convert.ToDouble(Console.ReadLine());
+                    area = b * h / 2;
+                    Console.WriteLine("El área es {0}", area);
+                    break;
+              case '2': Console.WriteLine("Ingresa lado A: ");
+                    a = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Ingresa lado B: ");
+                    b = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Ingresa lado C");
+                    c = Convert.ToDouble(Console.ReadLine());
+                    peri = a + b + c;
+                    Console.WriteLine("El perímetro es {0}", peri);
+                    break;
+            }
+            Console.ReadLine();
+        }
+    }
+}
+

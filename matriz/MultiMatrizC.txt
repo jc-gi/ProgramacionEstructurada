@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MultiMatrizC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int m, n, p, i, j,k;
+            Console.WriteLine("Multiplicación de matrices");
+            Console.WriteLine("A[m,n] * B[n,p] = R[m,p]");
+            Console.Write("Número de filas de la matriz A: ");
+            m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Número de columnas de la matriz A = filas de la matriz B: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Número de columnas de la matriz B: ");
+            p = Convert.ToInt32(Console.ReadLine());
+            int[,] A = new int[m, n];
+            int[,] B = new int[n, p];
+            int[,] R = new int[m, p];
+            Console.WriteLine("Lectura de matriz A");
+            for (i = 0; i < m; i++)
+                for (j = 0; j < n; j++)
+                {
+                    Console.Write("Elemento A[{0},{1}]: ", i, j);
+                    A[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            Console.WriteLine("Lectura de matriz B");
+            for (i = 0; i < n; i++)
+                for (j = 0; j < p; j++)
+                {
+                    Console.Write("Elemento A[{0},{1}]: ", i, j);
+                    B[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            //Realiza multiplicación de matrices A y B y coloca el resultado en R
+            for (i = 0; i < m; i++)
+                for (j = 0; j < p; j++)
+                {
+                    R[i, j] = 0;
+                    for (k = 0; k < n; k++)
+                        R[i, j] = R[i, j] + A[i, k] * B[k, j];
+                }
+            //Impresión de matrices A, B y R
+            Console.Clear();
+            Console.WriteLine("Matriz A");
+            for (i = 0; i < m; i++)
+            {
+                for (j = 0; j < n; j++)
+                    Console.Write("{0,10}", A[i, j]);
+                Console.WriteLine();
+            }
+            Console.WriteLine("Matriz B");
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < p; j++)
+                    Console.Write("{0,10}", B[i, j]);
+                Console.WriteLine();
+            }
+            Console.WriteLine("Matriz R");
+            for (i = 0; i < m; i++)
+            {
+                for (j = 0; j < p; j++)
+                    Console.Write("{0,10}", R[i, j]);
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+    }
+}

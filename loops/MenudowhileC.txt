@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MenudowhileC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char opc;
+            int num;
+            do
+            { Console.Write("Dame un número: ");
+              num = Convert.ToInt32(Console.ReadLine());
+              Console.WriteLine("Menú de opciones");
+              Console.WriteLine("1 Cuadrado");
+              Console.WriteLine("2 Cubo");
+              Console.WriteLine("3 Salir");
+              Console.Write("Introduce tu opción: ");
+              opc = Convert.ToChar(Console.ReadLine());
+              switch (opc)
+              {
+                  case '1': Console.WriteLine("El cuadrado de {0} es {1}", num, Math.Pow(num,2));
+                      break;
+                  case '2': Console.WriteLine("El cubo de {0} es {1}", num, Math.Pow(num, 3));
+                      break;
+              }
+            } while (!opc.Equals('3'));
+        }
+    }
+}

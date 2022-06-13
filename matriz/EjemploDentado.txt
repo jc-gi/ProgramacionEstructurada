@@ -1,0 +1,27 @@
+﻿using System;
+namespace EjemploDentado
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          int i, j;
+          int [][] D;
+          D = new int[3][]; 
+          D[0] = new int[3]; 
+          D[1] = new int[5]; 
+          D[2] = new int[4]; 
+          Console.WriteLine("Introduce los elementos del arreglo dentado D");
+          for(i=0;i<D.Length;i++)
+             for(j=0;j<D[i].Length;j++)
+             { Console.Write("Elemento D[{0}][{1}]: ",i,j);
+             D[i][j] = Convert.ToInt32(Console.ReadLine());  }
+          Console.WriteLine("Impresión del arreglo dentado.");
+          for (i = 0; i < D.Length; i++)
+          {  for (j = 0; j < D[i].Length; j++)
+                Console.Write("{0,8}", D[i][j]);
+             Console.WriteLine(); }
+          Console.ReadLine();
+        }
+    }
+}

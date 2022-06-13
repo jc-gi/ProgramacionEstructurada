@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ejemplo_while
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num;
+            char seguir='S';
+            while (seguir.Equals('S') || seguir.Equals('s'))
+            {
+                Console.Write("Dame un número: ");
+                num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("El cuadrado de {0} es {1} ", num, num*num);
+                Console.Write("Desea continuar (S/N): ");
+                seguir = Convert.ToChar(Console.ReadLine());
+            }
+        }
+    }
+}

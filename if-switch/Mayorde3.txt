@@ -1,0 +1,42 @@
+﻿using System;
+
+namespace Mayorde3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int A, B, C; //Números a comparar
+
+            Console.WriteLine("Comparación de números diferentes");
+            Console.Write("Dame el valor para A: ");
+            A=Convert.ToInt32(Console.ReadLine());
+            Console.Write("Dame el valor para B: ");
+            B = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Dame el valor para C: ");
+            C = Convert.ToInt32(Console.ReadLine());
+            //Verifica que sean diferentes
+            if (A != B && B != C && A != C)
+            { if(A>B && A>C) //Determina el número mayor
+                Console.WriteLine("El número mayor es {0}.", A);
+              else if(B>C)
+                     Console.WriteLine("El número mayor es {0}.", B);
+                   else
+                     Console.WriteLine("El número mayor es {0}.", C);
+            //Determina el número menor
+              if (A < B && A < C) 
+                Console.WriteLine("El número menor es {0}.", A);
+              else if (B < C)
+                     Console.WriteLine("El número menor es {0}.", B);
+                   else
+                     Console.WriteLine("El número menor es {0}.", C);
+            }
+            else
+            { //No son diferentes
+                Console.WriteLine("Los números no son diferentes.");
+            }
+            Console.Write("pulsa cualquier tecla para terminar...");
+            Console.ReadKey();
+        }
+    }
+}

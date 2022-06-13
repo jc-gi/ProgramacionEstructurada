@@ -1,0 +1,37 @@
+﻿using System;
+namespace matrizfuncproc
+{
+    class Program
+    {   static void ImprimeMatriz(int[,] matriz)
+        {   Console.Clear();
+            Console.WriteLine("Impresión de la matriz.");
+            for (int i = 0; i < 3; i++)
+            {  for (int j = 0; j < 4; j++)
+                    Console.Write("{0,8}", matriz[i, j]);
+               Console.WriteLine();
+            }
+        }
+        static double Promedio(int[,] matriz)
+       { double suma = 0;
+            for (int i = 0; i < 3; i++)
+               for (int j = 0; j < 4; j++)
+                    suma = suma +  matriz[i, j];
+            return (double)suma / 12;
+        }
+        static void Main(string[] args)
+        {
+            int[,] a = new int[3, 4];
+            int i, j;
+            Console.WriteLine("Introduce los elementos de la matriz.");
+            for (i = 0; i < 3; i++)
+                for (j = 0; j < 4; j++)
+                {
+                    Console.Write("Elemento [{0},{1}]: ", i, j);
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            ImprimeMatriz(a);
+            Console.WriteLine("El promedio de la matriz es: {0}", Promedio(a));
+            Console.ReadLine();
+        }
+    }
+}

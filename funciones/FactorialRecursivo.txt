@@ -1,0 +1,27 @@
+﻿using System;
+
+namespace FactorialRecursivo
+{
+    class Program
+    {
+        static int Factorial(int X)
+        {
+            if (X == 1)
+                return 1;
+            else
+                return X * Factorial(X - 1);
+        }
+        static void Main(string[] args)
+        {
+            int N, Resultado;
+
+            Console.WriteLine("Cálculo de factorial de N");
+            Console.WriteLine("con función recursiva \n");
+            Console.Write("Introduce el valor de N: ");
+            N=Convert.ToInt32(Console.ReadLine());
+            Resultado = Factorial(N);
+            Console.WriteLine("El factorial de {0} es {1}", N, Resultado);
+            Console.ReadLine();
+        }
+    }
+}

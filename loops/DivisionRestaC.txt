@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DivisionRestaC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int contador=0, numero, aux;
+
+            Console.WriteLine("División entera entre 2 por secuencia de restas");
+            Console.Write("Introduce un número entero: ");
+            numero = Convert.ToInt32(Console.ReadLine());
+            aux = numero;
+            while(numero>=2)
+            {
+                Console.Write("{0} - 2 = ", numero);
+                numero = numero - 2;
+                Console.WriteLine(numero);
+                contador++;
+            }
+            Console.WriteLine("El número {0} entre 2 es igual a {1}",aux,contador);
+            Console.ReadLine();
+        }
+    }
+}

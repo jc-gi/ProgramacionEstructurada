@@ -1,0 +1,59 @@
+﻿using System;
+
+namespace TranspuestaFuncProc
+{
+    class Program
+    {
+        static void LeeMatriz(int[,] Mat, int Fil, int Col)
+        {
+            int i, j;
+            for (i = 0; i < Fil; i++)
+                for (j = 0; j < Col; j++)
+                {
+                    Console.Write("Elemento [{0},{1}]: ", i, j);
+                    Mat[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+        }
+        static void Transpuesta(int[,] Mat, int[,] Trans, int Fil, int Col)
+        {
+            int i, j;
+            for (i = 0; i < Col; i++)
+                for (j = 0; j < Fil; j++)
+                    Trans[i, j] = Mat[j, i];
+        }
+        static void MuestraMatriz(int[,] Mat, int Fil, int Col)
+        {
+            int i, j;
+            for (i = 0; i < Fil; i++)
+            {
+                for (j = 0; j < Col; j++)
+                    Console.Write("{0,10}", Mat[i, j]);
+                Console.WriteLine();
+            }
+        }
+        static void Main(string[] args)
+        {
+            int m, n;
+            Console.WriteLine("Matriz transpuesta (T[i,j] = A[j,i])");
+            Console.WriteLine("Con funciones y procedimientos");
+            Console.Write("Número de filas de la matriz A: ");
+            m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Número de columnas de la matriz A: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            int[,] A = new int[m, n];
+            int[,] T = new int[n, m];
+            Console.WriteLine("Lectura de matriz A");
+            //Llamada a LeerMatriz
+            LeeMatriz(A,m,n);
+            //Genera matriz Transpuesta T
+            Transpuesta(A, T, m, n);
+            //Impresión de matrices A y T
+            Console.Clear();
+            Console.WriteLine("Matriz A");
+            MuestraMatriz(A, m, n);
+            Console.WriteLine("Matriz Transpuesta de A (T)");
+            MuestraMatriz(T, n, m);
+            Console.ReadLine();
+        }
+    }
+}

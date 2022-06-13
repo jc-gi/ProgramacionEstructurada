@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PromedioForC
+{ 
+  class Program
+    { 
+      static void Main(string[] args)
+        {   int i, N;
+            float cal, sumatoria=0, promedio;
+            Console.Write("Número de calificaciones: ");
+            N = Convert.ToInt32(Console.ReadLine());
+            for(i=1;i<=N;i++)
+            { Console.Write("Dame la calificación {0}: ", i);
+              cal = float.Parse(Console.ReadLine());
+              sumatoria = sumatoria + cal; 
+            } //Fin de for
+            promedio = sumatoria / N;
+            Console.WriteLine("El promedio es {0}", promedio);
+            Console.ReadLine();
+        } //Fin de Main
+    } //Fin de class
+} //Fin de namespace
+

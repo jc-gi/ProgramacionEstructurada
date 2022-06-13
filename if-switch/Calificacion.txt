@@ -1,0 +1,27 @@
+﻿using System;
+
+namespace Calificacion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int calif;
+
+            Console.WriteLine("Nota de una calificación");
+            Console.Write("Introduce tu calificación: ");
+            calif = Convert.ToInt32(Console.ReadLine());
+            if (calif >= 90)
+                Console.WriteLine("A");
+            else if (calif >= 80)
+                Console.WriteLine("B");
+            else if (calif >= 70)
+                Console.WriteLine("C");
+            else if (calif >= 60)
+                Console.WriteLine("D");
+            else
+                Console.WriteLine("F");
+            Console.ReadLine();
+        }
+    }
+}
