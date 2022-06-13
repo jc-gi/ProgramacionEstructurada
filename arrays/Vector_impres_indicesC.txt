@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Vector_impres_indicesC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] X = new int[5];
+            int i;
+            for (i = 0; i < 5; i++)
+            {
+                Console.Write("Introduce elemento X[{0}]: ", i);
+                X[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.Clear();
+            Console.WriteLine("Los elementos del vector X son: ");
+            Console.WriteLine("Índice   Elemento");
+            for (i = 0; i < 5; i++)
+               Console.WriteLine("{0,3} {1,10}", i, X[i]);
+            Console.ReadLine();
+        }
+    }
+}

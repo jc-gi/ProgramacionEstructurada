@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BurbujaC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N, i, j, aux;
+            Console.Write("Cuántos elementos tendrá el vector X: ");
+            N = Convert.ToInt32(Console.ReadLine());
+            int[] X = new int[N];
+            for (i = 0; i < N; i++)
+            {
+                Console.Write("Introduce X[{0}]: ", i);
+                X[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            for (i = 1; i < N; i++)
+                for (j = 0; j < N - i; j++)
+                    if (X[j] > X[j + 1])
+                    { aux = X[j];
+                    X[j] = X[j + 1];
+                    X[j + 1] = aux;
+                    }
+           Console.WriteLine("El vector ordenado es ");
+            for (i = 0; i < N; i++)
+                Console.WriteLine("X[{0}] = {1}", i, X[i]);
+            Console.ReadLine();
+
+        }
+    }
+}

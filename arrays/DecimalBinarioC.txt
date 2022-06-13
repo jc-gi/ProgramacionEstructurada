@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DecimalBinarioC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numero, i=0,j, aux;
+            int[] binario = new int[20];
+
+            Console.WriteLine("Decimal a Binario");
+            Console.Write("Introduce un número entero positivo: ");
+            numero = Convert.ToInt32(Console.ReadLine());
+            aux = numero;
+            while(aux>0)
+            { binario[i] = aux % 2;
+            aux = aux / 2;
+            i = i + 1;
+            }
+            Console.Write("El número {0} en Binario es ",numero);
+            if (numero != 0)
+            {
+                for (j = i - 1; j >= 0; j--)
+                    Console.Write(binario[j]);
+            }
+            else
+                Console.WriteLine("0");
+            Console.ReadLine();
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BinarioDecimalC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numdecimal=0, i, bit, max_indice, potencia;
+            string cadenabin;
+            Console.WriteLine("Binario a Decimal");
+            Console.Write("Introduce el número binario: ");
+            cadenabin = Console.ReadLine();
+            char[] binario = cadenabin.ToCharArray();
+            
+            max_indice=binario.Length - 1;
+            for (i = max_indice; i >= 0; i--)
+            {
+                bit = Int32.Parse("" + binario[i]);
+                potencia = (int) Math.Pow(2, max_indice - i);
+                numdecimal = numdecimal + bit * potencia;
+                Console.WriteLine("bit={0}  exponente={1}  potencia={2}", bit, max_indice - i, potencia);
+            }
+            Console.WriteLine("El número Binario {0} en Decimal es {1}", cadenabin,numdecimal);
+            Console.ReadLine();
+
+        }
+    }
+}

@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProductoEscalarC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N, i, k;
+            Console.Write("Cuántos elementos tendrá el vector X: ");
+            N = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Cuál es el escalar k: ");
+            k = Convert.ToInt32(Console.ReadLine());
+            int[] X = new int[N]; int[] R = new int[N];
+            for (i = 0; i < N; i++)
+            {
+                Console.Write("Introduce X[{0}]: ", i);
+                X[i] = Convert.ToInt32(Console.ReadLine());
+                R[i] = k * X[i];
+            }
+            Console.WriteLine("El vector resultante R es ");
+            for (i = 0; i < N; i++)
+                Console.WriteLine("R[{0}] = {1}", i, R[i]);
+            Console.ReadLine();
+
+        }
+    }
+}

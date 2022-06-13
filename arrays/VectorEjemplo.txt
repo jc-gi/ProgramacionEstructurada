@@ -1,0 +1,22 @@
+﻿using System;
+namespace VectorEjemplo
+{  class Program
+    {  static void Main(string[] args)
+     {
+        int N, i, suma = 0;
+        float promedio;
+        Console.Write("Cuántos elementos tendrá el vector: ");
+        N = Convert.ToInt32(Console.ReadLine());
+        int[] X = new int[N];
+        Console.WriteLine("Introduce valores enteros para el vector X");
+        for(i=0;i<N;i++)
+        { Console.Write("Introduce elemento {0}: ", i);
+          X[i] = Convert.ToInt32(Console.ReadLine());
+          suma = suma + X[i];
+        }
+        promedio = (float) suma / N;
+        Console.WriteLine("El promedio de los números es {0}",promedio);
+        Console.ReadLine();
+     }
+    }
+}

@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InvertircadenaC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+            string nombre;
+            Console.Write("Escribe tu nombre: ");
+            nombre = Console.ReadLine();
+            char[] letras = nombre.ToCharArray();
+            Console.Write("Tu nombre invertido es: ");
+            for (i = letras.Length - 1; i >= 0; i--)
+                Console.Write(letras[i]);
+              
+            Console.ReadLine();
+
+        }
+    }
+}
